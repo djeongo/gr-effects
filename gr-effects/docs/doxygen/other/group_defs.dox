@@ -1,0 +1,7 @@
+/*!
+ * \defgroup block GNU Radio EFFECTS C++ Signal Processing Blocks
+ * \brief All C++ blocks that can be used from the EFFECTS GNU Radio
+ *        module are listed here or in the subcategories below.
+ *
+ */
+
