@@ -18,5 +18,7 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    effects_delay_ff.xml DESTINATION share/gnuradio/grc/blocks
+    effects_delay_ff.xml
+    effects_overdrive_ff.xml
+    DESTINATION share/gnuradio/grc/blocks
 )

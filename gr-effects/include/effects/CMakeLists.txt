@@ -22,5 +22,6 @@
 ########################################################################
 install(FILES
     api.h
+    overdrive_ff.h
     delay_ff.h DESTINATION include/effects
 )

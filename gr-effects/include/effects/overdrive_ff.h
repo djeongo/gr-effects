@@ -1,57 +1,56 @@
 /* -*- c++ -*- */
-/* 
+/*
  * Copyright 2017 <+YOU OR YOUR COMPANY+>.
- * 
+ *
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 3, or (at your option)
  * any later version.
- * 
+ *
  * This software is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this software; see the file COPYING.  If not, write to
  * the Free Software Foundation, Inc., 51 Franklin Street,
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_EFFECTS_DELAY_FF_IMPL_H
-#define INCLUDED_EFFECTS_DELAY_FF_IMPL_H
 
-#include <effects/delay_ff.h>
+#ifndef INCLUDED_EFFECTS_OVERDRIVE_FF_H
+#define INCLUDED_EFFECTS_OVERDRIVE_FF_H
+
+#include <effects/api.h>
+#include <gnuradio/block.h>
 
 namespace gr {
   namespace effects {
 
-    class delay_ff_impl : public delay_ff
+    /*!
+     * \brief <+description of block+>
+     * \ingroup effects
+     *
+     */
+    class EFFECTS_API overdrive_ff : virtual public gr::block
     {
-     private:
-      // Nothing to declare in this block.
-
      public:
-      delay_ff_impl(int delay);
-      ~delay_ff_impl();
+      typedef boost::shared_ptr<overdrive_ff> sptr;
 
-      // Where all the action really happens
-      void forecast (int noutput_items, gr_vector_int &ninput_items_required);
-
-      int general_work(int noutput_items,
-           gr_vector_int &ninput_items,
-           gr_vector_const_void_star &input_items,
-           gr_vector_void_star &output_items);
-
-      void shift_left();
-
-      int delay_;             // input buffer size
-      float * input_buffer_;  // input buffer to store input samples
-      float * output_buffer_;  // output buffer to store output samples
+      /*!
+       * \brief Return a shared_ptr to a new instance of effects::overdrive_ff.
+       *
+       * To avoid accidental use of raw pointers, effects::overdrive_ff's
+       * constructor is in a private implementation
+       * class. effects::overdrive_ff::make is the public interface for
+       * creating new instances.
+       */
+      static sptr make(int overdrive);
     };
 
   } // namespace effects
 } // namespace gr
 
-#endif /* INCLUDED_EFFECTS_DELAY_FF_IMPL_H */
+#endif /* INCLUDED_EFFECTS_OVERDRIVE_FF_H */
 

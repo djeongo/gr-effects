@@ -27,6 +27,7 @@ link_directories(${Boost_LIBRARY_DIRS})
 
 list(APPEND effects_sources
     delay_ff_impl.cc
+    overdrive_ff_impl.cc
 )
 
 set(effects_sources "${effects_sources}" PARENT_SCOPE)
