@@ -4,7 +4,7 @@
   <key>effects_pitch_detector_ff</key>
   <category>[effects]</category>
   <import>import effects</import>
-  <make>effects.pitch_detector_ff($pitch_detector)</make>
+  <make>effects.pitch_detector_ff($n_fft)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
