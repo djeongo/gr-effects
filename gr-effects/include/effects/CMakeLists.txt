@@ -23,5 +23,6 @@
 install(FILES
     api.h
     overdrive_ff.h
-    delay_ff.h DESTINATION include/effects
+    delay_ff.h
+    pitch_detector_ff.h DESTINATION include/effects
 )

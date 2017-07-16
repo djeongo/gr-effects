@@ -20,5 +20,6 @@
 install(FILES
     effects_delay_ff.xml
     effects_overdrive_ff.xml
+    effects_pitch_detector_ff.xml
     DESTINATION share/gnuradio/grc/blocks
 )

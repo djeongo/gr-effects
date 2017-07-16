@@ -92,6 +92,9 @@ if(NOT Boost_FOUND)
     message(FATAL_ERROR "Boost required to compile effects")
 endif()
 
+find_package(FFTW3f)
+find_package(Volk)
+
 ########################################################################
 # Install directories
 ########################################################################

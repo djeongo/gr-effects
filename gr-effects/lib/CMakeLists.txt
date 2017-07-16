@@ -22,12 +22,18 @@
 ########################################################################
 include(GrPlatform) #define LIB_SUFFIX
 
-include_directories(${Boost_INCLUDE_DIR})
+include_directories(
+  ${Boost_INCLUDE_DIR}
+  ${VOLK_INCLUDE_DIRS}
+  ${FFTW3F_INCLUDE_DIRS}
+)
 link_directories(${Boost_LIBRARY_DIRS})
+link_directories(${FFTW3F_LIBRARY_DIRS})
 
 list(APPEND effects_sources
     delay_ff_impl.cc
     overdrive_ff_impl.cc
+    pitch_detector_ff_impl.cc
 )
 
 set(effects_sources "${effects_sources}" PARENT_SCOPE)
@@ -45,6 +51,8 @@ target_link_libraries(gnuradio-effects
   ${GNURADIO_ALL_LIBRARIES}
   gnuradio-pmt
   ${LOG4CPP_LIBRARIES}
+  ${FFTW3F_LIBRARIES}
+  ${VOLK_LIBRARIES}
 )
 set_target_properties(gnuradio-effects PROPERTIES DEFINE_SYMBOL "gnuradio_effects_EXPORTS")
 
