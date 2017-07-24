@@ -83,7 +83,7 @@ namespace gr {
       float *out = (float *) output_items[0];
 
 
-      std::cout << "noutput_items " << noutput_items <<std::endl;
+//      std::cout << "noutput_items " << noutput_items <<std::endl;
       for(int i=0; i<noutput_items; i++){
         shift_left();
         // push into buffer
